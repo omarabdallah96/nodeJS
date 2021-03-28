@@ -35,11 +35,12 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
-  var arr = text.split(" ");
+  var tasks = text.split(" ");
   if (text.trim() === 'quit' || text.trim()==='exit') {
     quit();
   }
-  else if (arr[0] === 'hello' || text === 'hello\n') {
+
+  else if (tasks[0] === 'hello' || text === 'hello\n') {
     hello(text);
   }
   else if(text.trim() === 'help'){
@@ -47,6 +48,9 @@ function onDataReceived(text) {
   }
   else if(text.trim() === 'list'){
     list();
+  }
+  else if(text.split(" ")[0] === 'add'){
+    add(text.split(" ")[1]);
   }
   else{
     unknownCommand(text);
@@ -107,12 +111,21 @@ function quit(){
   console.log('help')
   
 }
+let tasks=['hello','help','exit OR quit','list'];
 function list(){
-  let tasks=['hello','help','exit OR quit','list']
+
     for(let i=0;i<tasks.length;i++){
       console.log(i+'-'+tasks[i]);
       
-    }}
+    }
+}
+
+
+function add(c){
   
+  tasks.push(c);
+  list();
+}
+
 // The following line starts the application
 startApp("omar  abdallah")
