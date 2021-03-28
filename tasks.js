@@ -70,9 +70,12 @@ function unknownCommand(c){
  */
  function hello(t) {
 
-  if (t === 'hello\n') {
+  if (t.trim() === 'hello') {
     console.log(t.replace('hello', 'hello!'))
-  } else {
+
+  }
+  
+  else {
     console.log("\n" + t.trim() + "!\n");
   }
 
