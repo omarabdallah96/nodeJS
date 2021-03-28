@@ -62,6 +62,8 @@ function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
 
+// when ur command have one word 'hello' u will get 'hello!' between if ur command have 2 word lik 
+//'hello omar' u will get 'hello omar!'
 
 /**
  * Says hello
