@@ -35,11 +35,12 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+  var arr = text.split(" ");
   if (text.trim() === 'quit' || text.trim()==='exit') {
     quit();
   }
-  else if(text.trim() === 'hello'){
-    hello();
+  else if (arr[0] === 'hello' || text === 'hello\n') {
+    hello(text);
   }
   else if(text.trim() === 'help'){
     help();
@@ -64,12 +65,20 @@ function unknownCommand(c){
 
 /**
  * Says hello
- *
+ * @param  {string} t the text received
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+ function hello(t) {
+
+  if (t === 'hello\n') {
+    console.log(t.replace('hello', 'hello!'))
+  } else {
+    console.log("\n" + t.trim() + "!\n");
+  }
+
+
 }
+
 
 
 /**
