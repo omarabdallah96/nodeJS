@@ -82,7 +82,7 @@ function quit(){
   process.exit();
 }
 /**
- * Exits the application
+ * help command
  *
  * @returns {void}
  */
