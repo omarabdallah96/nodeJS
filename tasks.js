@@ -41,6 +41,9 @@ function onDataReceived(text) {
   else if(text.trim() === 'hello'){
     hello();
   }
+  else if(text.trim() === 'help'){
+    help();
+  }
   else{
     unknownCommand(text);
   }
@@ -78,6 +81,14 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-
+/**
+ * Exits the application
+ *
+ * @returns {void}
+ */
+ function help(){
+  console.log('help')
+  
+}
 // The following line starts the application
 startApp("omar  abdallah")
