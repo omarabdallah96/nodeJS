@@ -80,4 +80,4 @@ function quit(){
 }
 
 // The following line starts the application
-startApp("omar abdallah")
+startApp("omar  abdallah")
