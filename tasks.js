@@ -49,6 +49,14 @@ function onDataReceived(text) {
   else if(text.trim() === 'list'){
     list();
   }
+  else if(text.trim(" ") === 'remove'){
+    tasks.pop();
+  }
+else if(text.split(" ")[0] === 'remove'){
+  removeI(text.split(" ")[1]);
+
+
+}
   else if(text.split(" ")[0] === 'add'){
     add(text.split(" ")[1]);
   }
@@ -125,6 +133,13 @@ function add(c){
   
   tasks.push(c);
   list();
+}
+function removeI(c){
+  if(c>tasks.length-1){
+    console.log("number does not exist");
+  }else{
+  tasks.splice(c,1);
+  }
 }
 
 // The following line starts the application
