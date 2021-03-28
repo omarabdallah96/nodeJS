@@ -45,6 +45,9 @@ function onDataReceived(text) {
   else if(text.trim() === 'help'){
     help();
   }
+  else if(text.trim() === 'list'){
+    list();
+  }
   else{
     unknownCommand(text);
   }
@@ -104,5 +107,12 @@ function quit(){
   console.log('help')
   
 }
+function list(){
+  let tasks=['hello','help','exit OR quit','list']
+    for(let i=0;i<tasks.length;i++){
+      console.log(i+'-'+tasks[i]);
+      
+    }}
+  
 // The following line starts the application
 startApp("omar  abdallah")
