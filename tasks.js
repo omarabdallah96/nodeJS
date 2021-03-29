@@ -70,6 +70,9 @@ else if(text.trim(" ") === 'edit'){
   else if(text.split(" ")[0] === 'add'){
     add(text.split(" ")[1]);
   }
+   else if (arr[0] === 'check') {
+    check(text,tasks);
+  } 
   else{
     unknownCommand(text);
   }
@@ -155,6 +158,20 @@ function edit(l,c){
   
   tasks[l]=c;
   console.log(c+"was added");
+}
+function check (item,tasks){
+  //console.log(tasks[1]+"[✓]");
+var arr=item.split(" ");
+if ( arr[1]<tasks.length){
+  var reserve=tasks[arr[1]-1];
+  var task=tasks.splice(arr[1]-1,1,reserve+"[✓]");
+ console.log("----some tasks are done, please check your list----");
+}else{
+  console.log(tasks[arr[1]]);
+}
+
+
+
 }
 
 // The following line starts the application
