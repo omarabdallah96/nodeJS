@@ -57,6 +57,16 @@ else if(text.split(" ")[0] === 'remove'){
 
 
 }
+else if(text.trim(" ") === 'edit'){
+  console.log("ERROR");
+}else if(text.split(" ")[0] === 'edit'){
+ if(text.split(" ").length===2){
+  edit(tasks.length-1,text.split(" ")[1])
+ }else if(text.split(" ").length===3){
+   edit(text.split(" ")[1],text.split(" ")[2]);
+ }
+}
+
   else if(text.split(" ")[0] === 'add'){
     add(text.split(" ")[1]);
   }
@@ -140,6 +150,11 @@ function removeI(c){
   }else{
   tasks.splice(c,1);
   }
+}
+function edit(l,c){
+  
+  tasks[l]=c;
+  console.log(c+"was added");
 }
 
 // The following line starts the application
